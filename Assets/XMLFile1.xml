@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<SaveFile>
+  <Levels>
+    <Level name="Westopolis">
+      <DarkComplete>true</DarkComplete>
+      <NeutralComplete>true</NeutralComplete>
+      <HeroComplete>true</HeroComplete>
+      <NumOfKeys>5</NumOfKeys>
+    </Level>
+    <Level name="Westopolis">
+      <DarkComplete>true</DarkComplete>
+      <NeutralComplete>true</NeutralComplete>
+      <HeroComplete>true</HeroComplete>
+      <NumOfKeys>5</NumOfKeys>
+    </Level>
+    <Level name="Westopolis">
+      <DarkComplete>true</DarkComplete>
+      <NeutralComplete>true</NeutralComplete>
+      <HeroComplete>true</HeroComplete>
+      <NumOfKeys>5</NumOfKeys>
+    </Level>
+    <Level name="Westopolis">
+      <DarkComplete>true</DarkComplete>
+      <NeutralComplete>true</NeutralComplete>
+      <HeroComplete>true</HeroComplete>
+      <NumOfKeys>5</NumOfKeys>
+    </Level>
+    <Level name="Westopolis">
+      <DarkComplete>true</DarkComplete>
+      <NeutralComplete>true</NeutralComplete>
+      <HeroComplete>true</HeroComplete>
+      <NumOfKeys>5</NumOfKeys>
+    </Level>
+  </Levels>
+  <Paths>
+    <Path number="1" Completed = "true"/>
+    <Path number="1" Completed = "true"/>
+    <Path number="1" Completed = "true"/>
+    <Path number="1" Completed = "true"/>
+    <Path number="1" Completed = "true"/>
+    <Path number="1" Completed = "true"/>
+    <Path number="1" Completed = "true"/>
+    <Path number="1" Completed = "true"/>
+    <Path number="1" Completed = "true"/>
+    <Path number="1" Completed = "true"/>
+    <Path number="1" Completed = "true"/>
+    <Path number="1" Completed = "true"/>
+    <Path number="1" Completed = "true"/>
+    <Path number="1" Completed = "true"/>
+    <Path number="1" Completed = "true"/>
+    <Path number="1" Completed = "true"/>
+    <Path number="1" Completed = "true"/>
+    <Path number="1" Completed = "true"/>
+    <Path number="1" Completed = "true"/>
+    <Path number="1" Completed = "true"/>
+  </Paths>
+</SaveFile>
