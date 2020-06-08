@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class DungeonCollectable : MonoBehaviour, IPointerClickHandler
+public class DungeonCollectable : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
 {
     public Sprite Unknown;
     public Sprite EmeraldDungeon;
@@ -16,6 +16,8 @@ public class DungeonCollectable : MonoBehaviour, IPointerClickHandler
     public Sprite SpiritMedalion;
     public Sprite ShadowMedalion;
     public Sprite LightMedalion;
+
+    protected bool isHeld;
 
     public enum DungeonState
     {
@@ -51,11 +53,12 @@ public class DungeonCollectable : MonoBehaviour, IPointerClickHandler
         CurrentDungeonState = DungeonState.Unknown;
     }
 
-    public void OnPointerClick(PointerEventData eventData)
+    public void OnPointerDown(PointerEventData eventData)
     {
+        isHeld = true;
         if (eventData.button == PointerEventData.InputButton.Left)
         {
-            leftClick();
+            leftClick(eventData);
         }
         else if (eventData.button == PointerEventData.InputButton.Right)
         {
@@ -63,7 +66,36 @@ public class DungeonCollectable : MonoBehaviour, IPointerClickHandler
         }
     }
 
-    protected void leftClick()
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        isHeld = false;
+    }
+
+    protected void leftClick(PointerEventData eventData)
+    {
+        StartCoroutine(LeftClickToRightClickCheck(eventData));
+    }
+
+    private IEnumerator LeftClickToRightClickCheck(PointerEventData eventData)
+    {
+        var timeWaited = 0.0f;
+        while (isHeld && timeWaited < 0.5f)
+        {
+            yield return new WaitForEndOfFrame();
+            timeWaited += Time.deltaTime;
+        }
+
+        if (timeWaited >= 0.5f)
+        {
+            rightClick();
+        }
+        else
+        {
+            actualLeftClick();
+        }
+    }
+
+    protected void actualLeftClick()
     {
         ItemAcquired = !ItemAcquired || IsFree;
         selfButton.interactable = !selfButton.interactable || IsFree;
